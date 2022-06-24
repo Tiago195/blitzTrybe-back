@@ -7,6 +7,13 @@ const getAll = async (_req: Request, res: Response) => {
   res.status(200).json(users);
 };
 
+const create = async (req: Request, res: Response) => {
+  const user = await usersService.create(req.body);
+
+  res.status(201).json(user);
+};
+
 export default {
-  getAll
+  getAll,
+  create
 };
