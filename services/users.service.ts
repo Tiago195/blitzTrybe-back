@@ -7,7 +7,7 @@ const getAll = async () => {
   return users;
 };
 
-const create =async ({name, email, password, github, isAdmin}: INewUser) => {
+const create =async ({name, email, password, github, isAdmin = 0}: INewUser) => {
   const user = await User.findOrCreate({
     where: {email, password},
     defaults: {
