@@ -31,7 +31,7 @@ module.exports = {
         onUpdate: 'CASCADE',
       },
       status: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
       }
     });
