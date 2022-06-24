@@ -3,7 +3,7 @@ export interface INewUser {
   email: string,
   password: string,
   github?: string,
-  isAdmin: boolean
+  isAdmin: number
 }
 
 export default interface IUser extends INewUser {
