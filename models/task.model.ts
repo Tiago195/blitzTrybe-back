@@ -10,9 +10,11 @@ const Task = sequelize.define('Task', {
   content: DataTypes.STRING,
   user_id: DataTypes.INTEGER,
   status: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     defaultValue: 0
   }
+}, {
+  timestamps: false
 });
 
 export default Task;
