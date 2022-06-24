@@ -4,7 +4,7 @@ import User from '../models/user.model';
 const getByUserId =async (id: string) => {
   const tasks = await Task.findAll({
     where: {user_id: id},
-    include: {as: 'tasks', model: User}
+    attributes: {exclude: ['user_id']}
   });
 
   return tasks;
