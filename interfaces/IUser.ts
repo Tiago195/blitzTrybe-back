@@ -1,4 +1,6 @@
-export interface INewUser {
+import { Model } from 'sequelize/types';
+
+export interface INewUser extends Model {
   name: string,
   email: string,
   password: string,

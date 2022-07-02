@@ -24,4 +24,3 @@ Task.belongsTo(User, {
 });
 
 export default User;
-

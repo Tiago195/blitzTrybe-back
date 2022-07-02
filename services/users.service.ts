@@ -1,14 +1,16 @@
-import { INewUser } from '../interfaces/IUser';
+import IUser, { INewUser } from '../interfaces/IUser';
 import User from '../models/user.model';
 
-const getAll = async () => {
-  const users = await User.findAll();
+const getAll = async (): Promise<IUser[]> => {
+  const users = await User.findAll({
+    where: {isAdmin: 0}
+  });
 
-  return users;
+  return users as IUser[];
 };
 
 const create =async ({name, email, password, github, isAdmin = 0}: INewUser) => {
-  const user = await User.findOrCreate({
+  const [user] = await User.findOrCreate({
     where: {email, password},
     defaults: {
       name, email, password, github, isAdmin
